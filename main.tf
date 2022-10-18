@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     spacelift = {
-      source = "spacelift-io/spacelift"
+      source = "https://github.com/spacelift-io/spacelift"
     }
     aws = {
       source  = "hashicorp/aws"
