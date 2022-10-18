@@ -1,37 +1,6 @@
-terraform {
-  required_providers {
-    spacelift = {
-      source = "spacelift-io/spacelift"
-      version = "~> 0.1.20"
-    }
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 4.0"
-    }
-  }
-}
+# This resource here is to show you how plan policies work.
 
-
-provider "spacelift" {
-  # Configuration options
-}
-
-# Configure the AWS Provider
-provider "aws" {
-  region = "us-east-1"
-}
-
-
-data "aws_caller_identity" "current" {}
-
-output "account_id" {
-  value = data.aws_caller_identity.current.account_id
-}
-
-output "caller_arn" {
-  value = data.aws_caller_identity.current.arn
-}
-
-output "caller_user" {
-  value = data.aws_caller_identity.current.user_id
+resource "random_password" "secret" {
+  length  = 8
+  special = true
 }
